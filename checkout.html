@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Checkout</title>
+  </head>
+  <body>
+    <form class="" action="{{url_for('thankyou')}}" method="POST">
+      <fieldset style="width: 60%;">
+        <legend>Checkout</legend>
+        <h2>Added to Cart!</h2>
+        <br>
+        <span id="display"></span>
+        <p id="item"></p>
+        <hr style="margin: 1em;">
+        <label for="un">Enter username: <input type="text" name="username" placeholder="Type username..." id="un"></label>
+        <label for="email">Enter email address: <input type="email" name="email" placeholder="Type email address..." id="email"></label>
+        <input type="submit" name="submit" value="SUBMIT ORDER" style="margin: 2em;">
+      </fieldset>
+    </form>
+  <script type="text/javascript">
+    let d = document.querySelector('#display');
+    d.innerHTML = sessionStorage.getItem('product_name') +
+                  `<br>` + sessionStorage.getItem('product_price');
+  </script>
+  </body>
+</html>

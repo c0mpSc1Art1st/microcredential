@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Zachary Ashinoff - Activity 7</title>
+    <link rel="stylesheet" href="modal.css" type="text/css">
+  </head>
+  <body>
+    <h1 class="title">Modal Window</h1>
+    <a href="#modalWindow" class="open">Click Here</a>
+    <!-- Modal Window -->
+    <div class="modalBack" id="modalWindow">
+      <div class="modalFront">
+        <form action="checkout.html" method="get">
+        <a href="#" class="close">&#9932;</a>
+        <div class="imgCont">
+          <img src="lotion.jpg" alt="LAVENDER ROSE lotion" class="LAVENDER ROSE lotion">
+        </div>
+        <div class="info">
+          <p id="product_name">LAVENDER ROSE</p>
+          <p>Gentle Foaming Hand Soap</p>
+          <p>A soothing floral mix of lavender, soft rose petals and musk
+          in our luxurious foaming soap</p>
+          <span class="wasPrice">Was $12.50 </span><span class="nowPrice" id="price">$3.50</span>
+          <hr>
+            <input class="add" type="submit" onclick="passvalues();"
+            value="ADD TO BAG">
+            </input>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- End of Modal Window -->
+    <script type="text/javascript">
+      function passvalues() {
+        let name = document.querySelector('#product_name').innerHTML;
+        let price = document.querySelector('#price').innerHTML;
+        sessionStorage.setItem('product_name', name);
+        sessionStorage.setItem('product_price', price);
+      }
+    </script>
+  </body>
+</html>
